@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+<body>
+    <!-- Start Main Top -->
+    <div th:replace="~{fragments :: mainTop}"></div>
+    <!-- End Main Top -->
+
+    <!-- Start Main Top -->
+    <header th:replace="~{fragments :: mainHeader}"></header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div th:replace="~{fragments :: topSearch}"></div>
+    <!-- End Top Search -->
+
+    <!-- Start All Title Box -->
+    <div th:replace="~{fragments :: allTitleBox}"></div>
+    <!-- End All Title Box -->
+
+    <section id="login-form">
+        <div class="noi-dung">
+            <div class="form">
+                <h2>Log In</h2>
+                <div class="alert alert-danger text-center" th:if="${param.error}">Invalid username or password !</div>
+                <div class="alert alert-success text-center" th:if="${param.logout}">Logout Successfully !</div>
+                <form th:action="@{/do-login}" method="post">
+                    <div class="input-form">
+                        <!-- <span>User name</span> -->
+                        <input type="text" placeholder="Tài khoản" name="username">
+                    </div>
+                    <div class="input-form">
+                        <!-- <span>Password</span> -->
+                        <input type="password" placeholder="Mật khẩu" name="password">
+                    </div>
+                    <div class="Remember-me">
+                        <label><input type="checkbox" name="">Nhớ mật khẩu </label>
+                    </div>
+                    <div class="input-form">
+                        <input type="submit" value="Đăng nhập">
+                    </div>
+                    <div class="input-form">
+                        <p>Đăng chưa có tài khoản ? <a th:href="@{/register}">Đăng kí ngay  </a></p>
+                    </div>
+                </form>
+                <h3>Log In With Social Network</h3>
+                <ul class="icon-dang-nhap">
+                    <li><i class="fab fa-facebook-f"></i></i></li>
+                    <li><i class="fab fa-google"></i></li>
+                    <li><i class="fab fa-weibo"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Start copyright  -->
+	   <footer th:replace="~{fragments :: myFooter}"></footer>    
+	    <!-- End copyright  -->  
+    </section>
+  
+    <a  th:replace="~{fragments :: backToTop}"></a>
+
+    <!--Script-->
+    <div  th:replace="~{fragments :: script}"></div>
+    
+<script th:src="@{/js/active_ul_forLogin.js}"></script>
+</body>
+
+</html>

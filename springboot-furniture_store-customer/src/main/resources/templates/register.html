@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+
+<body>
+     <!-- Start Main Top -->
+    <div th:replace="~{fragments :: mainTop}"></div>
+    <!-- End Main Top -->
+
+    <!-- Start Main Top -->
+    <header th:replace="~{fragments :: mainHeader}"></header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div th:replace="~{fragments :: topSearch}"></div>
+    <!-- End Top Search -->
+
+    <!-- Start All Title Box -->
+    <div th:replace="~{fragments :: allTitleBox}"></div>
+    <!-- End All Title Box -->
+
+    <section id="register-form">
+        <div class="noi-dung">
+            <div class="form">
+                <h2>Đăng kí tài khoản</h2>
+                <div th:if="${success}" th:text="${success}" class="alert alert-success text-center"></div>
+                <div th:if="${failed}" th:text="${failed}" class="alert alert-danger text-center"></div>
+                <form th:action="@{/register-new}" method="post" th:object="${customerDto}">
+					<div class="input-form">
+                        <input type="text" placeholder="Tên riêng" name="firstName" th:value="${customerDto.firstName}">   
+                    </div>
+           			 <div  class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+                    
+					<div class="input-form">
+                        <input type="text" placeholder="Họ" name="lastName" th:value="${customerDto.lastName}">
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+                    </div>
+                    
+                    <div class="input-form">
+                      <!-- <span>User name</span> -->
+                        <input type="text" placeholder="Tài khoản" name="username" th:value="${customerDto.username}">
+                    </div>
+                    <div class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+                    
+                    <div class="input-form">
+                        <!-- <span>Password</span> -->
+                        <input type="password" placeholder="Mật khẩu" name="password" th:value="${customerDto.password}">
+                    </div>
+                     <div class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                    
+                    <div class="input-form">
+                        <!-- <span>Password</span> -->
+                        <input type="password" placeholder="Xác nhận mật khẩu" name="repeatPassword" th:value="${customerDto.repeatPassword}">
+                    </div>
+                    <div class="input-form">
+                        <p>Bạn đã có tài khoản ? <a th:href="@{/login}"> Đăng nhập ngay </a></p>
+                    </div>
+                    <div class="input-form">
+                        <input type="submit" value="Đăng kí">
+                    </div>	
+                </form>
+                <h3>Log In With Social Network</h3>
+                <ul class="icon-dang-nhap">
+                    <li><i class="fab fa-facebook-f"></i></i></li>
+                    <li><i class="fab fa-google"></i></li>
+                    <li><i class="fab fa-weibo"></i></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Start copyright  -->
+	   <footer th:replace="~{fragments :: myFooter}"></footer>    
+	    <!-- End copyright  -->
+	 
+    </section>
+    
+    <a  th:replace="~{fragments :: backToTop}"></a>
+
+    <!--Script-->
+<div th:replace="fragments :: script">
+</div>
+<script th:src="@{/js/active_ul.js}"></script>
+
+</body>
+
+</html>

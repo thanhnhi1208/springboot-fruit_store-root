@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            </div>
+                            
+                            <div th:if="${emailError}">
+								<p class="alert alert-danger text-center" th:text="${emailError}"></p>
+							</div>
+							
+							<div th:if="${error}">
+								<p class="alert alert-danger text-center" th:text="${error}"></p>
+							</div>
+							
+							<div th:if="${passwordError}">
+								<p class="alert alert-danger text-center" th:text="${passwordError}"></p>
+							</div>
+							
+							<div th:if="${success}">
+								<p class="alert alert-success text-center" th:text="${success}"></p>
+							</div>
+                            
+                            <form class="user" th:action="@{/register-new}" method="post" th:object="${adminDto}" >
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Tên riêng" name="firstName" th:value="${adminDto.firstName}" >
+                                         <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"
+                                         		th:errors="*{firstName}">		 
+										 </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                            placeholder="Họ" name="lastName" th:value="${adminDto.lastName}" >
+                                         <div class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}"
+                                         		th:errors="*{lastName}">		 
+										 </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Địa chỉ email" name="username" th:value="${adminDto.username}">
+                                     <div class="alert alert-danger" th:if="${#fields.hasErrors('username')}"
+                                         		th:errors="*{username}">		 
+									</div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="Mật khẩu" 
+                                            name="password" th:value="${adminDto.password}">
+                                         <div class="alert alert-danger" th:if="${#fields.hasErrors('password')}"
+                                         		th:errors="*{password}">		 
+										</div>
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleRepeatPassword" placeholder="Xác nhận mật khẩu" 
+                                            name="repeatPassword" th:value="${adminDto.repeatPassword}">
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Đăng kí
+                                </button>
+                                <!--<hr>
+                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                </a>
+                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                </a>-->
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" th:href="@{/forgot-password}">Quên mật khẩu?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" th:href="@{/login}">Bạn đã có một tài khoản ? Đăng nhập!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <div th:replace="~{fragments :: script}">
+	</div>
+
+</body>
+
+</html>
