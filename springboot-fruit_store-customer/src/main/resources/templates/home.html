@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+<body>
+	<!-- Start Main Top -->
+    <div th:replace="~{fragments :: mainTop}"></div>
+    <!-- End Main Top -->
+
+    <!-- Start Main Top -->
+    <header th:replace="~{fragments :: mainHeader}"></header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div th:replace="~{fragments :: topSearch}"></div>
+    <!-- End Top Search -->
+
+    <!-- Start Slider -->
+    <div th:replace="~{fragments :: allTitleBox}"></div>
+    <!-- End Slider -->
+
+   
+
+    <!-- Start About Page  -->
+    <div class="about-box-main">
+        <div class="container">
+            <div class="row">
+				<div class="col-lg-6">
+                    <div class="banner-frame"> <img class="img-fluid" src="images/42751.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top"> <span>Chúng Tôi Là Fruit Store</span></h2><br>
+                    <p>Fruit Store là một cửa hàng chuyên cung cấp các loại trái cây tươi ngon và chất lượng cao, mang đến cho khách hàng sự lựa chọn đa dạng và phong phú trong việc thưởng thức hương vị tự nhiên của trái cây.</p>
+                    <p>Fruit Store không chỉ là nơi để mua sắm, mà còn là điểm đến để trải nghiệm và chia sẻ đam mê về ẩm thực sức khỏe. Chúng tôi tổ chức các sự kiện, buổi thử nghiệm và khóa học về trái cây, giúp khách hàng hiểu rõ hơn về giá trị dinh dưỡng và cách sử dụng sáng tạo các loại trái cây khác nhau.</p>
+                	<p>Hãy đến và khám phá thế giới tươi mới tại Fruit Store, nơi mà chất lượng và sự hài lòng của khách hàng luôn được đặt lên hàng đầu!</p>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>Chất Lượng Đảm Bảo</h3>
+                        <p>Fruit Store cam kết về chất lượng sản phẩm, đảm bảo rằng mỗi trái cây được chăm sóc và thu hoạch đúng cách để giữ nguyên hương vị và giá trị dinh dưỡng. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>Trải Nghiệm Mua Sắm Đẳng Cấp</h3>
+                        <p>Fruit Store tạo ra một không gian mua sắm hiện đại, thoáng đãng và thú vị, nơi khách hàng không chỉ mua sắm mà còn trải nghiệm và học hỏi về ẩm thực sức khỏe.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>Tư Vấn Chuyên Nghiệp</h3>
+                        <p>Nhân viên tận tâm và chuyên nghiệp của Fruit Store sẵn sàng tư vấn cho khách hàng về cách chọn lựa, bảo quản và sử dụng trái cây một cách tối ưu.</p>
+                    </div>
+                </div>
+            </div>
+            
+
+   
+	
+	<!-- Start Footer  -->
+<footer th:replace="~{fragments :: myFooter}"></footer>
+            
+
+   <!--Script-->
+<div th:replace="~{fragments :: script}">
+</div>
+<script th:src="@{/js/active_ul.js}"></script>
+
+</body>
+
+</html>
